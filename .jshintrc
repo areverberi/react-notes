@@ -1,0 +1,35 @@
+/* jshint -W138 */
+{
+  "node": true,
+  "browser": true,
+  "esnext": true,
+  "bitwise": true,
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "quotmark": "single",
+  "undef": true,
+  "unused": true,
+  "strict": true,
+  "trailing": true,
+  "smarttabs": true,
+  "ignoreDelimiters": [
+    { "start": "start-non-standard", "end": "end-non-standard" }
+  ],
+  "globals": {
+    "console": true,
+    "describe": true,
+    "beforeEach": true,
+    "module": true,
+    "it": true,
+    "expect": true,
+    "browser": true,
+    "element": true,
+    "by": true,
+    "alert": true
+  }
+}
