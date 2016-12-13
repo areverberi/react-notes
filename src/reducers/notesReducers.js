@@ -9,3 +9,13 @@ export const notesReducer = (state=[], action) => {
       return state;
   }
 };
+
+export const noteReducer = (state={}, action) => {
+  switch (action.type) {
+    case actionTypes.NOTE_SELECTED:
+    case actionTypes.NOTE_FETCH_SUCCESS:
+      return action.note;
+    default:
+      return state;
+  }
+};

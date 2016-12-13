@@ -22,3 +22,49 @@ export const fetchNotes = () => {
       });
   };
 };
+
+export const fetchNoteHistorySuccess = (history) => {
+  return {
+    type: actionTypes.NOTE_HISTORY_FETCH_SUCCESS,
+    history: history,
+  };
+};
+
+export const fetchNoteHistory = (id) => {
+  return (dispatch) => {
+    return Axios.get(notesEndpoint+'/'+id)
+      .then(response => {
+        return dispatch(fetchNoteHistorySuccess(response.data.history));
+      })
+      .catch(error => {
+        throw error;
+      });
+  };
+};
+
+export const selectNote = (n) => {
+  return {
+    type : actionTypes.NOTE_SELECTED,
+    note: n,
+  };
+};
+
+
+export const fetchNoteSuccess = (note) => {
+  return {
+    type: actionTypes.NOTE_FETCH_SUCCESS,
+    note: note,
+  };
+};
+
+export const fetchNote = (id) => {
+  return (dispatch) => {
+    return Axios.get(notesEndpoint+'/'+id)
+      .then(response => {
+        return dispatch(fetchNoteSuccess(response.data));
+      })
+      .catch(error => {
+        throw error;
+      });
+  };
+};
